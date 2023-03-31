@@ -8,7 +8,7 @@ const initialFilter = {
   filters: [],
 };
 
-export const RecipesGrid = () => {
+export const RecipesTable = () => {
   const [filter, setFilter] = useState(initialFilter);
   return (
     <Grid
@@ -24,12 +24,17 @@ export const RecipesGrid = () => {
       <Column
         field="numIngredients"
         title="Ingredients"
-        width="90px"
+        width="120px"
         filter="numeric"
       />
       <Column field="cuisine" title="Cuisine" width="120px" />
       <Column field="course" title="Course" width="120px" />
-      <Column field="servings" title="Servings" width="90px" filter="numeric" />
+      <Column
+        field="servings"
+        title="Servings"
+        width="120px"
+        filter="numeric"
+      />
       <Column
         field="cookTime"
         title="Cooking Time"
@@ -55,4 +60,4 @@ export const RecipesGrid = () => {
   );
 };
 
-export default RecipesGrid;
+export default RecipesTable;
