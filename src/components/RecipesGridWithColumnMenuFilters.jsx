@@ -1,8 +1,9 @@
 import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import { filterBy } from "@progress/kendo-data-query";
 import { useState } from "react";
-import recipes from "../assets/recipes.json";
 import { ColumnMenu, ColumnMenuCheckboxFilter } from "./columnMenu";
+import originalRecipes from "../assets/recipes.json";
+const recipes = originalRecipes.slice(0, 100);
 const initialFilter = {
   logic: "and",
   filters: [

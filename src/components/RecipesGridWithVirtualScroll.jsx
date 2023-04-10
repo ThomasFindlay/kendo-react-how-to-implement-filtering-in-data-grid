@@ -1,10 +1,10 @@
 import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import { filterBy } from "@progress/kendo-data-query";
 import { useState } from "react";
-import originalRecipes from "../assets/recipes.json";
+import recipesOriginal from "../assets/recipes.json";
 import { useEffect } from "react";
 
-const recipes = originalRecipes.slice(0, 100);
+const recipes = recipesOriginal.slice(0, 100);
 const initialFilter = {
   logic: "and",
   filters: [
@@ -24,18 +24,35 @@ const initialFilter = {
 const gridStyle = {
   height: "420px",
 };
+const pageSize = 25;
 
-export const RecipesGridWithColumnFilters = () => {
+export const RecipesGridWithVirtualScroll = () => {
   const [filter, setFilter] = useState(initialFilter);
+  const [filteredRecipes, setFilteredRecipes] = useState(
+    filterBy(recipes, filter)
+  );
+  const [skip, setSkip] = useState(0);
+  const pageChange = event => {
+    setSkip(event.page.skip);
+  };
+
+  useEffect(() => {
+    setFilteredRecipes(filterBy(recipes, filter));
+  }, [filter]);
 
   return (
     <Grid
       style={gridStyle}
-      data={filterBy(recipes, filter)}
-      pageSize={20}
+      data={filteredRecipes}
+      pageSize={pageSize}
       filterable
       filter={filter}
       onFilterChange={e => setFilter(e.filter)}
+      total={recipes.length}
+      skip={skip}
+      scrollable={"virtual"}
+      onPageChange={pageChange}
+      rowHeight={75}
     >
       <Column field="recipe" title="Recipe" width="250px" filterable />
       <Column
@@ -77,4 +94,4 @@ export const RecipesGridWithColumnFilters = () => {
   );
 };
 
-export default RecipesGridWithColumnFilters;
+export default RecipesGridWithVirtualScroll;
