@@ -25,37 +25,41 @@ export const RangeFilterCell = props => {
   };
   const value = props.value || null;
   return (
-    <div>
-      Min:
-      <span
-        style={{
-          margin: "0 16px 0 2px",
-        }}
-      >
-        <NumericTextBox
-          width="70px"
-          value={value && value.min}
-          ref={numeric => {
-            minTextBox = numeric;
+    <div className="k-display-flex k-align-items-end">
+      <div className="k-display-flex k-direction-column">
+        <span>Min:</span>
+        <span
+          style={{
+            margin: "0 16px 0 2px",
           }}
-          onChange={onChange}
-        />
-      </span>
-      Max:
-      <span
-        style={{
-          margin: "0 2px 0 4px",
-        }}
-      >
-        <NumericTextBox
-          width="70px"
-          value={value && value.max}
-          ref={numeric => {
-            maxTextBox = numeric;
+        >
+          <NumericTextBox
+            width="70px"
+            value={value && value.min}
+            ref={numeric => {
+              minTextBox = numeric;
+            }}
+            onChange={onChange}
+          />
+        </span>
+      </div>
+      <div className="k-display-flex k-direction-column">
+        <span>Max:</span>
+        <span
+          style={{
+            margin: "0 8px 0 4px",
           }}
-          onChange={onChange}
-        />
-      </span>
+        >
+          <NumericTextBox
+            width="70px"
+            value={value && value.max}
+            ref={numeric => {
+              maxTextBox = numeric;
+            }}
+            onChange={onChange}
+          />
+        </span>
+      </div>
       <button
         className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base k-button k-button-md k-rounded-md k-button-solid k-button-solid-base-icon k-clear-button-visible"
         title="Clear"

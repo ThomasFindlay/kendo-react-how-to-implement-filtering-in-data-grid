@@ -27,7 +27,7 @@ export const RecipesGridWithCustomCellFilter = () => {
       <Column
         field="numIngredients"
         title="Ingredients"
-        width="260px"
+        width="320px"
         filter="numeric"
         filterCell={RangeFilterCell}
       />
@@ -36,14 +36,14 @@ export const RecipesGridWithCustomCellFilter = () => {
       <Column
         field="servings"
         title="Servings"
-        width="260px"
+        width="320px"
         filter="numeric"
         filterCell={RangeFilterCell}
       />
       <Column
         field="cookTime"
         title="Cooking Time"
-        width="260px"
+        width="320px"
         filter="numeric"
         format="{0} mins"
         filterCell={RangeFilterCell}
@@ -51,7 +51,7 @@ export const RecipesGridWithCustomCellFilter = () => {
       <Column
         field="prepTime"
         title="Prep Time"
-        width="260px"
+        width="320px"
         filter="numeric"
         format="{0} mins"
         filterCell={RangeFilterCell}
@@ -59,7 +59,7 @@ export const RecipesGridWithCustomCellFilter = () => {
       <Column
         field="totalTime"
         title="Total Time"
-        width="260px"
+        width="320px"
         filter="numeric"
         format="{0} mins"
         filterCell={RangeFilterCell}
