@@ -2,22 +2,16 @@ import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import { filterBy } from "@progress/kendo-data-query";
 import { useState } from "react";
 import originalRecipes from "../assets/recipes.json";
-import { useEffect } from "react";
 
 const recipes = originalRecipes.slice(0, 100);
 const initialFilter = {
   logic: "and",
   filters: [
-    // {
-    //   field: "recipe",
-    //   operator: "contains",
-    //   value: "Chicken",
-    // },
-    // {
-    //   field: "cuisine",
-    //   operator: "contains",
-    //   value: "Asian",
-    // },
+    {
+      field: "recipe",
+      operator: "contains",
+      value: "Chicken",
+    },
   ],
 };
 

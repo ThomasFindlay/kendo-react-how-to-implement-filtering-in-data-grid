@@ -26,7 +26,7 @@ export const RangeFilterCell = props => {
   const value = props.value || null;
   return (
     <div className="k-display-flex k-align-items-end">
-      <div className="k-display-flex k-direction-column">
+      <div className="k-display-flex k-flex-column">
         <span>Min:</span>
         <span
           style={{
@@ -34,7 +34,7 @@ export const RangeFilterCell = props => {
           }}
         >
           <NumericTextBox
-            width="70px"
+            width="80px"
             value={value && value.min}
             ref={numeric => {
               minTextBox = numeric;
@@ -43,7 +43,7 @@ export const RangeFilterCell = props => {
           />
         </span>
       </div>
-      <div className="k-display-flex k-direction-column">
+      <div className="k-display-flex k-flex-column">
         <span>Max:</span>
         <span
           style={{
@@ -51,7 +51,7 @@ export const RangeFilterCell = props => {
           }}
         >
           <NumericTextBox
-            width="70px"
+            width="80px"
             value={value && value.max}
             ref={numeric => {
               maxTextBox = numeric;

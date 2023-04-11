@@ -3,6 +3,7 @@ import { filterBy } from "@progress/kendo-data-query";
 import { useState } from "react";
 import { ColumnMenu, ColumnMenuCheckboxFilter } from "./columnMenu";
 import originalRecipes from "../assets/recipes.json";
+
 const recipes = originalRecipes.slice(0, 100);
 const initialFilter = {
   logic: "and",
@@ -36,33 +37,33 @@ export const RecipesGridWithColumnMenuFilters = () => {
       <Column
         field="numIngredients"
         title="Ingredients"
-        width="240px"
+        width="180px"
         filter="numeric"
         columnMenu={ColumnMenu}
       />
       <Column
         field="cuisine"
         title="Cuisine"
-        width="240px"
-        columnMenu={ColumnMenu}
+        width="180px"
+        columnMenu={ColumnMenuCheckboxFilter}
       />
       <Column
         field="course"
         title="Course"
-        width="240px"
-        columnMenu={ColumnMenu}
+        width="180px"
+        columnMenu={ColumnMenuCheckboxFilter}
       />
       <Column
         field="servings"
         title="Servings"
-        width="240px"
+        width="180px"
         filter="numeric"
         columnMenu={ColumnMenu}
       />
       <Column
         field="cookTime"
         title="Cooking Time"
-        width="240px"
+        width="180px"
         filter="numeric"
         format="{0} mins"
         columnMenu={ColumnMenu}
@@ -70,7 +71,7 @@ export const RecipesGridWithColumnMenuFilters = () => {
       <Column
         field="prepTime"
         title="Prep Time"
-        width="240px"
+        width="180px"
         filter="numeric"
         format="{0} mins"
         columnMenu={ColumnMenu}
@@ -78,7 +79,7 @@ export const RecipesGridWithColumnMenuFilters = () => {
       <Column
         field="totalTime"
         title="Total Time"
-        width="240px"
+        width="180px"
         filter="numeric"
         format="{0} mins"
         columnMenu={ColumnMenu}

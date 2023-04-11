@@ -1,7 +1,7 @@
 import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import { filterBy } from "@progress/kendo-data-query";
 import { useState } from "react";
-import { RangeFilterCell } from "./rangeFilterCell";
+import { RangeFilterCell } from "./RangeFilterCell";
 import originalRecipes from "../assets/recipes.json";
 const recipes = originalRecipes.slice(0, 100);
 
@@ -27,7 +27,7 @@ export const RecipesGridWithCustomCellFilter = () => {
       <Column
         field="numIngredients"
         title="Ingredients"
-        width="320px"
+        width="210px"
         filter="numeric"
         filterCell={RangeFilterCell}
       />
@@ -36,14 +36,14 @@ export const RecipesGridWithCustomCellFilter = () => {
       <Column
         field="servings"
         title="Servings"
-        width="320px"
+        width="210px"
         filter="numeric"
         filterCell={RangeFilterCell}
       />
       <Column
         field="cookTime"
         title="Cooking Time"
-        width="320px"
+        width="210px"
         filter="numeric"
         format="{0} mins"
         filterCell={RangeFilterCell}
@@ -51,7 +51,7 @@ export const RecipesGridWithCustomCellFilter = () => {
       <Column
         field="prepTime"
         title="Prep Time"
-        width="320px"
+        width="210px"
         filter="numeric"
         format="{0} mins"
         filterCell={RangeFilterCell}
@@ -59,7 +59,7 @@ export const RecipesGridWithCustomCellFilter = () => {
       <Column
         field="totalTime"
         title="Total Time"
-        width="320px"
+        width="210px"
         filter="numeric"
         format="{0} mins"
         filterCell={RangeFilterCell}

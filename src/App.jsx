@@ -12,10 +12,10 @@ function App() {
       <RecipesTable /> */}
       {/* <h2>Grid with column filters</h2>
       <RecipesGridWithColumnFilters /> */}
-      <h2>Grid with custom column cell filter</h2>
-      <RecipesGridWithCustomCellFilter />
-      {/* <h2>Grid with column menu filters</h2>
-      <RecipesGridWithColumnMenuFilters /> */}
+      {/* <h2>Grid with custom column cell filter</h2>
+      <RecipesGridWithCustomCellFilter /> */}
+      <h2>Grid with column menu filters</h2>
+      <RecipesGridWithColumnMenuFilters />
     </div>
   );
 }
