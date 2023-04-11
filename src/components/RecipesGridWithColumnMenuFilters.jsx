@@ -1,7 +1,7 @@
 import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import { filterBy } from "@progress/kendo-data-query";
 import { useState } from "react";
-import { ColumnMenu, ColumnMenuCheckboxFilter } from "./columnMenu";
+import { ColumnMenu, ColumnMenuCheckboxFilter } from "./ColumnMenu";
 import originalRecipes from "../assets/recipes.json";
 
 const recipes = originalRecipes.slice(0, 100);
