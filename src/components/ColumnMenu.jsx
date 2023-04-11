@@ -3,6 +3,7 @@ import {
   GridColumnMenuCheckboxFilter,
 } from "@progress/kendo-react-grid";
 import recipes from "../assets/recipes.json";
+
 export const ColumnMenu = props => {
   return (
     <div>
@@ -10,6 +11,7 @@ export const ColumnMenu = props => {
     </div>
   );
 };
+
 export const ColumnMenuCheckboxFilter = props => {
   return (
     <div>

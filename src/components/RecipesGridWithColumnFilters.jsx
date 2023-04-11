@@ -1,8 +1,9 @@
 import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import { filterBy } from "@progress/kendo-data-query";
 import { useState } from "react";
-import recipes from "../assets/recipes.json";
+import originalRecipes from "../assets/recipes.json";
 
+const recipes = originalRecipes.slice(0, 100);
 const initialFilter = {
   logic: "and",
   filters: [
@@ -11,28 +12,26 @@ const initialFilter = {
       operator: "contains",
       value: "Chicken",
     },
-    {
-      field: "cuisine",
-      operator: "contains",
-      value: "Asian",
-    },
   ],
+};
+
+const gridStyle = {
+  height: "420px",
 };
 
 export const RecipesGridWithColumnFilters = () => {
   const [filter, setFilter] = useState(initialFilter);
+
   return (
     <Grid
-      style={{
-        height: "420px",
-      }}
+      style={gridStyle}
       data={filterBy(recipes, filter)}
       pageSize={20}
       filterable
       filter={filter}
       onFilterChange={e => setFilter(e.filter)}
     >
-      <Column field="recipe" title="Recipe" width="250px" />
+      <Column field="recipe" title="Recipe" width="250px" filterable />
       <Column
         field="numIngredients"
         title="Ingredients"
