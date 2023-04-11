@@ -58,7 +58,7 @@ const init = async () => {
 
   await fs.writeFile(
     path.resolve(__dirname, "../src/assets", "recipes.json"),
-    JSON.stringify(recipes, null, 2),
+    JSON.stringify(recipes.slice(0, 1000), null, 2),
     "utf-8"
   );
 };
